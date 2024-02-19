@@ -10,11 +10,13 @@ object CharacterGenerator {
 	private val alignments = listOf("Lawful Good", "Neutral Good", "Chaotic Good", "Lawful Neutral", "True Neutral", "Chaotic Neutral", "Lawful Evil", "Neutral Evil", "Chaotic Evil")
 
 	fun generateRandomCharacter(): DndCharacter {
-		val random = Random.Default
+		val race = races.random()
+		val nameGenerator = RandomNameGenerator()
+		val randomName = nameGenerator.generateRandomName(race)
 
 		val character = DndCharacter(
-			name = "Character-${random.nextInt(1000)}",
-			race = races.random(),
+			name = randomName,
+			race = race,
 			characterClass = classes.random(),
 			background = backgrounds.random(),
 			alignment = alignments.random(),
