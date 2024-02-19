@@ -1,8 +1,13 @@
 package dnd.services
 
 import dnd.data.model.DndCharacter
+import dnd.data.model.DndCharacterDetails
 import dnd.services.characterServices.RandomNameGenerator
-import dnd.services.characterServices.randomAbilityScore
+import dnd.services.characterServices.characterDetails.generateRandomBonds
+import dnd.services.characterServices.characterDetails.generateRandomFlaws
+import dnd.services.characterServices.characterDetails.generateRandomIdeals
+import dnd.services.characterServices.characterDetails.generateRandomPersonalityTraits
+import dnd.services.characterServices.rollAbilityScore
 
 
 object CharacterGenerator {
@@ -23,15 +28,20 @@ object CharacterGenerator {
 			background = backgrounds.random(),
 			alignment = alignments.random(),
 			abilityScores = mapOf(
-				"Strength" to randomAbilityScore(),
-				"Dexterity" to randomAbilityScore(),
-				"Constitution" to randomAbilityScore(),
-				"Intelligence" to randomAbilityScore(),
-				"Wisdom" to randomAbilityScore(),
-				"Charisma" to randomAbilityScore()
+				"Strength" to rollAbilityScore(),
+				"Dexterity" to rollAbilityScore(),
+				"Constitution" to rollAbilityScore(),
+				"Intelligence" to rollAbilityScore(),
+				"Wisdom" to rollAbilityScore(),
+				"Charisma" to rollAbilityScore()
+			),
+			characterDetails = DndCharacterDetails(
+				personalityTraits = generateRandomPersonalityTraits(),
+				ideals = generateRandomIdeals(),
+				bonds = generateRandomBonds(),
+				flaws = generateRandomFlaws(),
 			)
 		)
-
 		return character
 	}
 }
