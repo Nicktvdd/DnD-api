@@ -9,16 +9,16 @@ import dnd.services.characterServices.characterDetails.generateRandomFlaws
 import dnd.services.characterServices.characterDetails.generateRandomIdeals
 import dnd.services.characterServices.characterDetails.generateRandomPersonalityTraits
 import dnd.services.characterServices.rollAbilityScore
+import dnd.data.Races
+import dnd.data.Classes
+import dnd.data.Backgrounds
+import dnd.data.Alignments
 
 
 object CharacterGenerator {
-	private val races = listOf("Human", "Elf", "Dwarf", "Halfling", "Dragonborn", "Gnome", "Half-Elf", "Half-Orc", "Tiefling")
-	private val classes = listOf("Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard")
-	private val backgrounds = listOf("Acolyte", "Charlatan", "Criminal", "Entertainer", "Folk Hero", "Guild Artisan", "Hermit", "Noble", "Outlander", "Sage", "Sailor", "Soldier", "Urchin")
-	private val alignments = listOf("Lawful Good", "Neutral Good", "Chaotic Good", "Lawful Neutral", "True Neutral", "Chaotic Neutral", "Lawful Evil", "Neutral Evil", "Chaotic Evil")
 
 	fun generateRandomCharacter(): DndCharacter {
-		val race = races.random()
+		val race = Races.random()
 		val nameGenerator = RandomNameGenerator()
 		val randomName = nameGenerator.generateRandomName(race)
 		val abilityScores = mapOf(
@@ -29,7 +29,7 @@ object CharacterGenerator {
 			"Wisdom" to rollAbilityScore(),
 			"Charisma" to rollAbilityScore()
 		)
-		val characterClass = classes.random()
+		val characterClass = Classes.random()
 		val hitpoints = calculateHitpoints(characterClass = characterClass, constitution = abilityScores["Constitution"] ?: 10)
 
 
@@ -37,8 +37,8 @@ object CharacterGenerator {
 			name = randomName,
 			race = race,
 			characterClass = characterClass,
-			background = backgrounds.random(),
-			alignment = alignments.random(),
+			background = Backgrounds.random(),
+			alignment = Alignments.random(),
 			abilityScores = abilityScores,
 			characterDetails = DndCharacterDetails(
 				personalityTraits = generateRandomPersonalityTraits(),
