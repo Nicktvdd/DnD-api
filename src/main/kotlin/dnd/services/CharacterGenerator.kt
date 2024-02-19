@@ -3,6 +3,7 @@ package dnd.services
 import dnd.data.model.DndCharacter
 import dnd.data.model.DndCharacterDetails
 import dnd.services.characterServices.RandomNameGenerator
+import dnd.services.characterServices.calculateHitpoints
 import dnd.services.characterServices.characterDetails.generateRandomBonds
 import dnd.services.characterServices.characterDetails.generateRandomFlaws
 import dnd.services.characterServices.characterDetails.generateRandomIdeals
@@ -20,27 +21,32 @@ object CharacterGenerator {
 		val race = races.random()
 		val nameGenerator = RandomNameGenerator()
 		val randomName = nameGenerator.generateRandomName(race)
+		val abilityScores = mapOf(
+			"Strength" to rollAbilityScore(),
+			"Dexterity" to rollAbilityScore(),
+			"Constitution" to rollAbilityScore(),
+			"Intelligence" to rollAbilityScore(),
+			"Wisdom" to rollAbilityScore(),
+			"Charisma" to rollAbilityScore()
+		)
+		val characterClass = classes.random()
+		val hitpoints = calculateHitpoints(characterClass = characterClass, constitution = abilityScores["Constitution"] ?: 10)
+
 
 		val character = DndCharacter(
 			name = randomName,
 			race = race,
-			characterClass = classes.random(),
+			characterClass = characterClass,
 			background = backgrounds.random(),
 			alignment = alignments.random(),
-			abilityScores = mapOf(
-				"Strength" to rollAbilityScore(),
-				"Dexterity" to rollAbilityScore(),
-				"Constitution" to rollAbilityScore(),
-				"Intelligence" to rollAbilityScore(),
-				"Wisdom" to rollAbilityScore(),
-				"Charisma" to rollAbilityScore()
-			),
+			abilityScores = abilityScores,
 			characterDetails = DndCharacterDetails(
 				personalityTraits = generateRandomPersonalityTraits(),
 				ideals = generateRandomIdeals(),
 				bonds = generateRandomBonds(),
 				flaws = generateRandomFlaws(),
-			)
+			),
+			hitpoints = hitpoints,
 		)
 		return character
 	}
