@@ -1,7 +1,9 @@
 package dnd.services
 
 import dnd.data.model.DndCharacter
-import kotlin.random.Random
+import dnd.services.characterServices.RandomNameGenerator
+import dnd.services.characterServices.randomAbilityScore
+
 
 object CharacterGenerator {
 	private val races = listOf("Human", "Elf", "Dwarf", "Halfling", "Dragonborn", "Gnome", "Half-Elf", "Half-Orc", "Tiefling")
@@ -31,10 +33,5 @@ object CharacterGenerator {
 		)
 
 		return character
-	}
-
-	private fun randomAbilityScore(): Int {
-		// Implement logic to generate random ability scores (e.g., rolling a 6-sided die)
-		return (1..6).map { Random.Default.nextInt(1, 7) }.sortedDescending().take(3).sum()
 	}
 }
