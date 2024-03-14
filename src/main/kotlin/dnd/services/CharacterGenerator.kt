@@ -60,7 +60,8 @@ object CharacterGenerator {
 			),
 			hitPoints = hitPoints,
 			hitDice = hitDice,
-			features = getRaceFeatures(race)
+			raceFeatures = getRaceFeatures(race),
+			classFeatures = getClassFeatures(characterClass)
 		)
 		return character
 	}

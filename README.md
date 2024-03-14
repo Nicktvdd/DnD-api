@@ -5,7 +5,6 @@
 To do:
 - Proficiencies
 - Equipment
-- Features
 - Spells
 - Armor Class
 - Initiative
@@ -36,3 +35,4 @@ Done:
   - flaws
 - hitpoints
 - hit dice
+- features

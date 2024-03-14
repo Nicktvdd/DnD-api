@@ -2,6 +2,7 @@ package dnd.data
 
 object Classes {
 	private val classes = listOf(
+		"Artificer",
 		"Barbarian",
 		"Bard",
 		"Cleric",
