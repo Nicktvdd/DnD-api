@@ -8,6 +8,7 @@ fun getRaceFeatures(race: String): Map<String, String?> {
 		"Human" -> Human()
 		"Dwarf" -> Dwarf()
 		"Dragonborn" -> Dragonborn()
+		"Elf" -> Elf()
 		// Add other races here...
 		else -> null
 	}
@@ -21,6 +22,9 @@ fun getRaceFeatures(race: String): Map<String, String?> {
 		}
 		is Dragonborn -> {
 			Dragonborn::class.memberProperties.associateBy({ it.name }, { it.get(raceInstance)?.toString() })
+		}
+		is Elf -> {
+			Elf::class.memberProperties.associateBy({ it.name }, { it.get(raceInstance)?.toString() })
 		}
 		// Add other races here...
 		else -> mapOf("Error" to "Race not found")

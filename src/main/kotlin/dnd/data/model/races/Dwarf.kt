@@ -17,6 +17,4 @@ class Dwarf: Race() {
 	val stonecunning = "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus"
 	val dwarvenCombatTraining = "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer"
 	val toolProficiency = "You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools"
-	val dwarvenToughness = "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level"
-	val subRaceDescription = "As a hill dwarf, you have keen senses, deep intuition, and remarkable resilience"
-}
+	val dwarvenToughness = "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level" }
