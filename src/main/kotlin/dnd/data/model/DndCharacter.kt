@@ -19,6 +19,8 @@ data class DndCharacter(
 	val alignment: String,
 	val abilityScores: Map<String, Int>,
 	val abilityModifiers: Map<String, Int>,
+	val proficiencyBonus: Int,
 	val characterDetails: DndCharacterDetails,
 	val hitpoints: Int,
+	val hitdice: String
 )

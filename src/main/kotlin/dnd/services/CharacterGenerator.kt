@@ -2,18 +2,15 @@ package dnd.services
 
 import dnd.data.model.DndCharacter
 import dnd.data.model.DndCharacterDetails
-import dnd.services.characterServices.RandomNameGenerator
-import dnd.services.characterServices.calculateHitpoints
 import dnd.services.characterServices.characterDetails.generateRandomBonds
 import dnd.services.characterServices.characterDetails.generateRandomFlaws
 import dnd.services.characterServices.characterDetails.generateRandomIdeals
 import dnd.services.characterServices.characterDetails.generateRandomPersonalityTraits
-import dnd.services.characterServices.rollAbilityScore
 import dnd.data.Races
 import dnd.data.Classes
 import dnd.data.Backgrounds
 import dnd.data.Alignments
-import dnd.services.characterServices.calculateAbilityModifier
+import dnd.services.characterServices.*
 
 
 object CharacterGenerator {
@@ -40,9 +37,11 @@ object CharacterGenerator {
 		)
 		val characterClass = Classes.random()
 		val hitpoints = calculateHitpoints(characterClass = characterClass, constitution = abilityScores["Constitution"] ?: 10)
+		val hitdice = calculateHitDice(characterClass = characterClass)
 
 
 		val character = DndCharacter(
+			proficiencyBonus = 2,
 			name = randomName,
 			race = race,
 			characterClass = characterClass,
@@ -57,6 +56,7 @@ object CharacterGenerator {
 				flaws = generateRandomFlaws(),
 			),
 			hitpoints = hitpoints,
+			hitdice = hitdice
 		)
 		return character
 	}
