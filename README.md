@@ -17,7 +17,7 @@ To do:
 - Spell Attack Bonus
 - Attacks
 - Currency
-- Level
+- Simplified view
 
 Done:
 - Name
@@ -36,3 +36,4 @@ Done:
 - hitpoints
 - hit dice
 - features
+- Level

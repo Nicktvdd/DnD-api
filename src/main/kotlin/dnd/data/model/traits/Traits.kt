@@ -1,4 +1,4 @@
-package dnd.data
+package dnd.data.model.traits
 
 class PersonalityTraits {
 	val positiveTraits: List<String> = listOf(

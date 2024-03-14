@@ -1,9 +1,9 @@
 package dnd.data.model.races
 
-open class Race {
-	open val abilityScoreIncreases: Map<String, Int> = mapOf()
-	open val size: String = ""
-	open val speed: String = ""
-	open val age: String = ""
-	open val languages: String = ""
+abstract class Race {
+	abstract val abilityScoreIncreases: Map<String, Int>
+	abstract val size: String
+	abstract val speed: String
+	abstract val age: String
+	abstract val languages: String
 }

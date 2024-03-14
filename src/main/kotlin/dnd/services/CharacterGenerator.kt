@@ -9,7 +9,7 @@ import dnd.services.characterServices.characterDetails.generateRandomPersonality
 import dnd.data.Races
 import dnd.data.Classes
 import dnd.data.Backgrounds
-import dnd.data.Alignments
+import dnd.data.model.traits.Alignments
 import dnd.services.characterServices.*
 import dnd.services.characterServices.abilityScores.calculateAbilityModifier
 import dnd.services.characterServices.abilityScores.rollAbilityScore
@@ -40,6 +40,7 @@ object CharacterGenerator {
 		val characterClass = Classes.random()
 		val hitPoints = calculateHitpoints(characterClass = characterClass, constitution = abilityScores["Constitution"] ?: 10)
 		val hitDice = calculateHitDice(characterClass = characterClass)
+		val background = Backgrounds.random()
 
 
 		val character = DndCharacter(
@@ -48,7 +49,7 @@ object CharacterGenerator {
 			name = randomName,
 			race = race,
 			characterClass = characterClass,
-			background = Backgrounds.random(),
+			background = background,
 			alignment = Alignments.random(),
 			abilityScores = abilityScores,
 			abilityModifiers = abilityModifiers,
@@ -61,7 +62,8 @@ object CharacterGenerator {
 			hitPoints = hitPoints,
 			hitDice = hitDice,
 			raceFeatures = getRaceFeatures(race),
-			classFeatures = getClassFeatures(characterClass)
+			classFeatures = getClassFeatures(characterClass),
+			backgroundFeatures = getBackgroundFeatures(background)
 		)
 		return character
 	}

@@ -1,6 +1,6 @@
 package dnd.services.characterServices.characterDetails
 
-import dnd.data.PersonalityTraits
+import dnd.data.model.traits.PersonalityTraits
 
 fun generateRandomPersonalityTraits(numTraits: Int = 1): List<String> {
 	val personalityTraits = PersonalityTraits()

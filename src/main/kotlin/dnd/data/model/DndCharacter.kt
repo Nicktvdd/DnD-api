@@ -25,5 +25,6 @@ data class DndCharacter(
 	val hitPoints: Int,
 	val hitDice: String,
 	val raceFeatures: Map<String, String?>,
-	val classFeatures: Map<String, String?>
+	val classFeatures: Map<String, String?>,
+	val backgroundFeatures: Map<String, String?>
 )
