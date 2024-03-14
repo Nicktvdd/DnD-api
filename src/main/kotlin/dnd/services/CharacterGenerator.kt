@@ -42,7 +42,6 @@ object CharacterGenerator {
 		val hitDice = calculateHitDice(characterClass = characterClass)
 		val background = Backgrounds.random()
 
-
 		val character = DndCharacter(
 			level = 1,
 			proficiencyBonus = 2,

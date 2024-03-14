@@ -1,39 +1,17 @@
-![screen1](https://github.com/Nicktvdd/DnD-api/assets/5775657/24442396-f8f1-4800-bf2e-f57e2fe43b50)
-![screen2](https://github.com/Nicktvdd/DnD-api/assets/5775657/3300072f-3245-49cc-a27e-221bb2533c60)
-![screen3](https://github.com/Nicktvdd/DnD-api/assets/5775657/0e70adf3-cc31-4913-8514-2464a50ab721)
+![Screenshot from 2024-03-14 17-40-11](https://github.com/Nicktvdd/DnD-api/assets/5775657/a63267ed-1200-41c8-ad14-a916ad4161c3)
+![Screenshot from 2024-03-14 17-40-03](https://github.com/Nicktvdd/DnD-api/assets/5775657/70babdf0-6c31-4d3e-a45f-a411c0a7508a)
+![Screenshot from 2024-03-14 17-39-52](https://github.com/Nicktvdd/DnD-api/assets/5775657/58f72bd0-2743-4820-b094-79da07d72f5e)
 
 To do:
-- Proficiencies
-- Equipment
 - Spells
-- Armor Class
-- Initiative
-- Speed
-- Saves
-- Skills
-- Passive Perception
-- Languages
-- Spell Save DC
-- Spell Attack Bonus
 - Attacks
-- Currency
 - Simplified view
-
-Done:
-- Name
-- Race
-- Character Class
-- Background
-- Alignment
-- Ability Scores
-- Ability Modifiers
-- Proficiency Bonus
-- Character details
-  - personality traits
-  - ideals
-  - bonds
-  - flaws
-- hitpoints
-- hit dice
-- features
-- Level
+  - proficiencies summary
+- Automatic calculation of 
+  - ability modifiers
+  - skills modifiers
+  - Armor Class
+  - Initiative
+  - Saving Throws
+- Beyond first level
+    - Subclasses
