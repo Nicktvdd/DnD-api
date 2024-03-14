@@ -11,12 +11,14 @@ import dnd.data.Classes
 import dnd.data.Backgrounds
 import dnd.data.Alignments
 import dnd.services.characterServices.*
+import dnd.services.characterServices.abilityScores.calculateAbilityModifier
+import dnd.services.characterServices.abilityScores.rollAbilityScore
 
 
 object CharacterGenerator {
-
 	fun generateRandomCharacter(): DndCharacter {
 		val race = Races.random()
+		//val raceFeatures = getRaceFeatures(race = race)
 		val nameGenerator = RandomNameGenerator()
 		val randomName = nameGenerator.generateRandomName(race)
 		val abilityScores = mapOf(
@@ -36,11 +38,12 @@ object CharacterGenerator {
 			"Charisma" to calculateAbilityModifier(abilityScores["Charisma"] ?: 10)
 		)
 		val characterClass = Classes.random()
-		val hitpoints = calculateHitpoints(characterClass = characterClass, constitution = abilityScores["Constitution"] ?: 10)
-		val hitdice = calculateHitDice(characterClass = characterClass)
+		val hitPoints = calculateHitpoints(characterClass = characterClass, constitution = abilityScores["Constitution"] ?: 10)
+		val hitDice = calculateHitDice(characterClass = characterClass)
 
 
 		val character = DndCharacter(
+			level = 1,
 			proficiencyBonus = 2,
 			name = randomName,
 			race = race,
@@ -55,8 +58,9 @@ object CharacterGenerator {
 				bonds = generateRandomBonds(),
 				flaws = generateRandomFlaws(),
 			),
-			hitpoints = hitpoints,
-			hitdice = hitdice
+			hitPoints = hitPoints,
+			hitDice = hitDice,
+			features = getRaceFeatures(race)
 		)
 		return character
 	}

@@ -13,6 +13,7 @@ data class DndCharacterDetails(
 @Serializable
 data class DndCharacter(
 	val name: String,
+	val level: Int,
 	val race: String,
 	val characterClass: String,
 	val background: String,
@@ -21,6 +22,7 @@ data class DndCharacter(
 	val abilityModifiers: Map<String, Int>,
 	val proficiencyBonus: Int,
 	val characterDetails: DndCharacterDetails,
-	val hitpoints: Int,
-	val hitdice: String
+	val hitPoints: Int,
+	val hitDice: String,
+	val features: Map<String, String?>
 )

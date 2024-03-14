@@ -1,6 +1,7 @@
 package dnd.services.characterServices
 
 import dnd.data.Hitpoints
+import dnd.services.characterServices.abilityScores.calculateAbilityModifier
 
 fun calculateHitpoints(characterClass: String, constitution: Number): Int {
 	val hitpoints = Hitpoints()

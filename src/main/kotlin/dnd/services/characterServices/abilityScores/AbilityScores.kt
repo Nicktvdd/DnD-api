@@ -1,4 +1,4 @@
-package dnd.services.characterServices
+package dnd.services.characterServices.abilityScores
 
 import kotlin.random.Random
 
