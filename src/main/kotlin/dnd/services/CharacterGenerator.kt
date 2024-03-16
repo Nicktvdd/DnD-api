@@ -17,37 +17,25 @@ import dnd.services.characterServices.features.getBackgroundFeatures
 import dnd.services.characterServices.features.getClassFeatures
 import dnd.services.characterServices.features.getRaceFeatures
 
-
 object CharacterGenerator {
+	private const val INITIAL_LEVEL = 1
+	private const val INITIAL_PROFICIENCY_BONUS = 2
+
 	fun generateRandomCharacter(): DndCharacter {
 		val race = Races.random()
-		//val raceFeatures = getRaceFeatures(race = race)
+		val raceFeatures = getRaceFeatures(race = race)
 		val nameGenerator = RandomNameGenerator()
 		val randomName = nameGenerator.generateRandomName(race)
-		val abilityScores = mapOf(
-			"Strength" to rollAbilityScore(),
-			"Dexterity" to rollAbilityScore(),
-			"Constitution" to rollAbilityScore(),
-			"Intelligence" to rollAbilityScore(),
-			"Wisdom" to rollAbilityScore(),
-			"Charisma" to rollAbilityScore()
-		)
-		val abilityModifiers = mapOf(
-			"Strength" to calculateAbilityModifier(abilityScores["Strength"] ?: 10),
-			"Dexterity" to calculateAbilityModifier(abilityScores["Dexterity"] ?: 10),
-			"Constitution" to calculateAbilityModifier(abilityScores["Constitution"] ?: 10),
-			"Intelligence" to calculateAbilityModifier(abilityScores["Intelligence"] ?: 10),
-			"Wisdom" to calculateAbilityModifier(abilityScores["Wisdom"] ?: 10),
-			"Charisma" to calculateAbilityModifier(abilityScores["Charisma"] ?: 10)
-		)
+		val abilityScores = generateAbilityScores()
+		val abilityModifiers = calculateAbilityModifiers(abilityScores)
 		val characterClass = Classes.random()
-		val hitPoints = calculateHitpoints(characterClass = characterClass, constitution = abilityScores["Constitution"] ?: 10)
+		val initialHitPoints = calculateHitpoints(characterClass = characterClass, constitution = abilityScores["Constitution"] ?: 10)
 		val hitDice = calculateHitDice(characterClass = characterClass)
 		val background = Backgrounds.random()
 
 		val character = DndCharacter(
-			level = 1,
-			proficiencyBonus = 2,
+			level = INITIAL_LEVEL,
+			proficiencyBonus = INITIAL_PROFICIENCY_BONUS,
 			name = randomName,
 			race = race,
 			characterClass = characterClass,
@@ -61,12 +49,34 @@ object CharacterGenerator {
 				bonds = generateRandomBonds(),
 				flaws = generateRandomFlaws(),
 			),
-			hitPoints = hitPoints,
+			hitPoints = initialHitPoints,
 			hitDice = hitDice,
-			raceFeatures = getRaceFeatures(race),
+			raceFeatures = raceFeatures,
 			classFeatures = getClassFeatures(characterClass),
 			backgroundFeatures = getBackgroundFeatures(background),
 		)
 		return character
+	}
+
+	private fun generateAbilityScores(): MutableMap<String, Int> {
+		return mutableMapOf(
+			"Strength" to rollAbilityScore(),
+			"Dexterity" to rollAbilityScore(),
+			"Constitution" to rollAbilityScore(),
+			"Intelligence" to rollAbilityScore(),
+			"Wisdom" to rollAbilityScore(),
+			"Charisma" to rollAbilityScore()
+		)
+	}
+
+	private fun calculateAbilityModifiers(abilityScores: MutableMap<String, Int>): Map<String, Int> {
+		return mapOf(
+			"Strength" to calculateAbilityModifier(abilityScores["Strength"] ?: 10),
+			"Dexterity" to calculateAbilityModifier(abilityScores["Dexterity"] ?: 10),
+			"Constitution" to calculateAbilityModifier(abilityScores["Constitution"] ?: 10),
+			"Intelligence" to calculateAbilityModifier(abilityScores["Intelligence"] ?: 10),
+			"Wisdom" to calculateAbilityModifier(abilityScores["Wisdom"] ?: 10),
+			"Charisma" to calculateAbilityModifier(abilityScores["Charisma"] ?: 10)
+		)
 	}
 }
