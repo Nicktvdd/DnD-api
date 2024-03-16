@@ -1,12 +1,14 @@
 package dnd.data.model.races
 
-import kotlin.random.Random
-
 class HalfElf : Race() {
+	val abilities =
+		listOf("Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom")
+	val randomAbilities =
+		abilities.shuffled().take(2)
 	override val abilityScoreIncreases = mapOf(
 		"Charisma" to 2,
-		"An ability score" to 1,
-		"Another ability score" to 1
+		randomAbilities[0] to 1,
+		randomAbilities[1] to 1
 	)
 	override val size =
 		"Medium"
