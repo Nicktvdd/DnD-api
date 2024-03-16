@@ -5,7 +5,6 @@ import dnd.services.characterServices.calculateStartingGold
 class Fighter: Class() {
 	override val hitDie = 10
 	override val primaryAbility = "Strength or Dexterity"
-	override val saves = listOf("Strength", "Constitution")
 	override val skills = listOf("Acrobatics", "Animal Handling", "Athletics", "History", "Insight", "Intimidation", "Perception", "Survival")
 	override val armor = listOf("Light armor", "Medium armor", "Heavy armor", "Shields")
 	override val weaponProficiencies = listOf("Simple weapons", "Martial weapons")

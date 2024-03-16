@@ -5,7 +5,6 @@ import dnd.services.characterServices.calculateStartingGold
 class Barbarian: Class() {
 	override val hitDie: Int = 12
 	override val primaryAbility: String = "Strength"
-	override val saves: List<String> = listOf("Strength", "Constitution")
 	override val skills: List<String> = listOf("Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival")
 	override val armor: List<String> = listOf("Light armor", "Medium armor", "Shields")
 	override val weaponProficiencies: List<String> = listOf("Simple weapons", "Martial weapons")

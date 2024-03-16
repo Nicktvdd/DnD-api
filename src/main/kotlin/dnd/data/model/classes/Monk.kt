@@ -5,7 +5,6 @@ import dnd.services.characterServices.calculateStartingGold
 class Monk: Class() {
 	override val hitDie: Int = 8
 	override val primaryAbility: String = "Dexterity"
-	override val saves: List<String> = listOf("Strength", "Dexterity")
 	override val skills: List<String> = listOf("Acrobatics", "Athletics", "History", "Insight", "Religion", "Stealth")
 	override val armor: List<String> = listOf("None")
 	override val weaponProficiencies: List<String> = listOf("Simple weapons", "Shortswords")

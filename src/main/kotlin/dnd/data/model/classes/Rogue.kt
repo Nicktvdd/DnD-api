@@ -5,7 +5,6 @@ import dnd.services.characterServices.calculateStartingGold
 class Rogue: Class() {
 	override val hitDie: Int = 8
 	override val primaryAbility: String = "Dexterity"
-	override val saves: List<String> = listOf("Dexterity", "Intelligence")
 	override val skills: List<String> = listOf("Acrobatics", "Athletics", "Deception", "Insight", "Intimidation", "Investigation", "Perception", "Performance", "Persuasion", "Sleight of Hand", "Stealth")
 	override val armor: List<String> = listOf("Light armor")
 	override val weaponProficiencies: List<String> = listOf("Simple weapons", "Hand crossbows", "Longswords", "Rapiers", "Shortswords")

@@ -5,7 +5,6 @@ import dnd.services.characterServices.calculateStartingGold
 class Warlock: Class() {
 	override val hitDie: Int = 8
 	override val primaryAbility: String = "Charisma"
-	override val saves: List<String> = listOf("Wisdom", "Charisma")
 	override val skills: List<String> = listOf("Arcana", "Deception", "History", "Intimidation", "Investigation", "Nature", "Religion")
 	override val armor: List<String> = listOf("Light armor")
 	override val weaponProficiencies: List<String> = listOf("Simple weapons")

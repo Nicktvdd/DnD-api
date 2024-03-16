@@ -5,7 +5,6 @@ import dnd.services.characterServices.calculateStartingGold
 class Bard: Class() {
 	override val hitDie: Int = 8
 	override val primaryAbility: String = "Charisma"
-	override val saves: List<String> = listOf("Dexterity", "Charisma")
 	override val skills: List<String> = listOf("Choose any three")
 	override val armor: List<String> = listOf("Light armor")
 	override val weaponProficiencies: List<String> = listOf("Simple weapons", "Hand crossbows", "Longswords", "Rapiers", "Shortswords")

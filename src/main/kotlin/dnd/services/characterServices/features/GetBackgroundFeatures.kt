@@ -1,4 +1,4 @@
-package dnd.services.characterServices
+package dnd.services.characterServices.features
 
 import dnd.data.model.backgrounds.*
 import kotlin.reflect.full.memberProperties

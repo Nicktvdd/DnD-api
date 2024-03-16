@@ -5,7 +5,6 @@ import dnd.services.characterServices.calculateStartingGold
 class Artificer: Class() {
 	override val hitDie: Int = 8
 	override val primaryAbility: String = "Intelligence"
-	override val saves: List<String> = listOf("Constitution", "Intelligence")
 	override val skills: List<String> = listOf("Arcana", "History", "Investigation", "Medicine", "Nature", "Perception", "Sleight of Hand")
 	override val armor: List<String> = listOf("Light armor", "Medium armor", "Shields")
 	override val weaponProficiencies: List<String> = listOf("Simple weapons", "Hand crossbows", "Heavy crossbows")

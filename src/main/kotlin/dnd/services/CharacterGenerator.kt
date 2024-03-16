@@ -13,6 +13,9 @@ import dnd.data.model.traits.Alignments
 import dnd.services.characterServices.*
 import dnd.services.characterServices.abilityScores.calculateAbilityModifier
 import dnd.services.characterServices.abilityScores.rollAbilityScore
+import dnd.services.characterServices.features.getBackgroundFeatures
+import dnd.services.characterServices.features.getClassFeatures
+import dnd.services.characterServices.features.getRaceFeatures
 
 
 object CharacterGenerator {
@@ -62,7 +65,7 @@ object CharacterGenerator {
 			hitDice = hitDice,
 			raceFeatures = getRaceFeatures(race),
 			classFeatures = getClassFeatures(characterClass),
-			backgroundFeatures = getBackgroundFeatures(background)
+			backgroundFeatures = getBackgroundFeatures(background),
 		)
 		return character
 	}

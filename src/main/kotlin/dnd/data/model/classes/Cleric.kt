@@ -5,7 +5,6 @@ import dnd.services.characterServices.calculateStartingGold
 class Cleric: Class() {
 	override val hitDie: Int = 8
 	override val primaryAbility: String = "Wisdom"
-	override val saves: List<String> = listOf("Wisdom", "Charisma")
 	override val skills: List<String> = listOf("History", "Insight", "Medicine", "Persuasion", "Religion")
 	override val armor: List<String> = listOf("Light armor", "Medium armor", "Shields")
 	override val weaponProficiencies: List<String> = listOf("Simple weapons")

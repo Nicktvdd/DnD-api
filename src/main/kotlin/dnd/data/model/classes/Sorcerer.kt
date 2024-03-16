@@ -5,7 +5,6 @@ import dnd.services.characterServices.calculateStartingGold
 class Sorcerer: Class() {
 	override val hitDie: Int = 6
 	override val primaryAbility: String = "Charisma"
-	override val saves: List<String> = listOf("Constitution", "Charisma")
 	override val skills: List<String> = listOf("Arcana", "Deception", "Insight", "Intimidation", "Persuasion", "Religion")
 	override val armor: List<String> = listOf("None")
 	override val weaponProficiencies: List<String> = listOf("Daggers", "Darts", "Slings", "Quarterstaffs", "Light crossbows")

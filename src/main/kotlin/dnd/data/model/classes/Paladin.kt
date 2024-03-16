@@ -5,7 +5,6 @@ import dnd.services.characterServices.calculateStartingGold
 class Paladin: Class() {
 	override val hitDie: Int = 10
 	override val primaryAbility: String = "Strength"
-	override val saves: List<String> = listOf("Wisdom", "Charisma")
 	override val skills: List<String> = listOf("Athletics", "Insight", "Intimidation", "Medicine", "Persuasion", "Religion")
 	override val armor: List<String> = listOf("All armor", "Shields")
 	override val weaponProficiencies: List<String> = listOf("Simple weapons", "Martial weapons")

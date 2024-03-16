@@ -5,7 +5,6 @@ import dnd.services.characterServices.calculateStartingGold
 class Wizard: Class() {
 	override val hitDie: Int = 6
 	override val primaryAbility: String = "Intelligence"
-	override val saves: List<String> = listOf("Intelligence", "Wisdom")
 	override val skills: List<String> = listOf("Arcana", "History", "Insight", "Investigation", "Medicine", "Religion")
 	override val armor: List<String> = listOf("None")
 	override val weaponProficiencies: List<String> = listOf("Daggers", "Darts", "Slings", "Quarterstaffs", "Light crossbows")

@@ -5,7 +5,6 @@ import dnd.services.characterServices.calculateStartingGold
 class Druid: Class() {
 	override val hitDie: Int = 8
 	override val primaryAbility: String = "Wisdom"
-	override val saves: List<String> = listOf("Intelligence", "Wisdom")
 	override val skills: List<String> = listOf("Arcana", "Animal Handling", "Insight", "Medicine", "Nature", "Perception", "Religion", "Survival")
 	override val armor: List<String> = listOf("Light armor", "Medium armor", "Shields (druids will not wear armor or use shields made of metal)")
 	override val weaponProficiencies: List<String> = listOf("Clubs", "Daggers", "Darts", "Javelins", "Maces", "Quarterstaffs", "Scimitars", "Sickles", "Slings", "Spears")

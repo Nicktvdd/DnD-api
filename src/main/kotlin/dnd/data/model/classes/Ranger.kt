@@ -5,7 +5,6 @@ import dnd.services.characterServices.calculateStartingGold
 class Ranger: Class() {
 	override val hitDie: Int = 10
 	override val primaryAbility: String = "Dexterity"
-	override val saves: List<String> = listOf("Strength", "Dexterity")
 	override val skills: List<String> = listOf("Choose three from Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, and Survival")
 	override val armor: List<String> = listOf("Light armor", "Medium armor", "Shields")
 	override val weaponProficiencies: List<String> = listOf("Simple weapons", "Martial weapons")
