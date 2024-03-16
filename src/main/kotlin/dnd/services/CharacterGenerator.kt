@@ -12,6 +12,7 @@ import dnd.data.Backgrounds
 import dnd.data.model.traits.Alignments
 import dnd.services.characterServices.*
 import dnd.services.characterServices.abilityScores.calculateAbilityModifier
+import dnd.services.characterServices.abilityScores.calculateAbilityScoreIncrease
 import dnd.services.characterServices.abilityScores.rollAbilityScore
 import dnd.services.characterServices.features.getBackgroundFeatures
 import dnd.services.characterServices.features.getClassFeatures
@@ -26,12 +27,15 @@ object CharacterGenerator {
 		val raceFeatures = getRaceFeatures(race = race)
 		val nameGenerator = RandomNameGenerator()
 		val randomName = nameGenerator.generateRandomName(race)
-		val abilityScores = generateAbilityScores()
+		var abilityScores = generateAbilityScores()
+		abilityScores = calculateAbilityScoreIncrease(race, abilityScores)
 		val abilityModifiers = calculateAbilityModifiers(abilityScores)
 		val characterClass = Classes.random()
 		val initialHitPoints = calculateHitpoints(characterClass = characterClass, constitution = abilityScores["Constitution"] ?: 10)
 		val hitDice = calculateHitDice(characterClass = characterClass)
 		val background = Backgrounds.random()
+
+
 
 		val character = DndCharacter(
 			level = INITIAL_LEVEL,

@@ -23,8 +23,7 @@ In the future I will host it on a server and make it available for everyone if p
 - Simplified view
   - proficiencies summary
   - features summary
-- Automatic calculation of 
-  - ability modifiers
+- Automatic calculation of
   - skills modifiers
   - Armor Class
   - Initiative
