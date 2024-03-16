@@ -47,6 +47,8 @@ object CharacterGenerator {
 			alignment = Alignments.random(),
 			abilityScores = abilityScores,
 			abilityModifiers = abilityModifiers,
+			initiative = abilityModifiers["Dexterity"] ?: (0 + if (characterClass == "Bard") 1 else 0),
+			passivePerception = abilityModifiers["Wisdom"]?.plus(10) ?: 0,
 			characterDetails = DndCharacterDetails(
 				personalityTraits = generateRandomPersonalityTraits(),
 				ideals = generateRandomIdeals(),

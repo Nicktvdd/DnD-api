@@ -25,6 +25,9 @@ fun Route.htmlcharacter() {
 				p { +"Intelligence: ${character.abilityScores["Intelligence"]} (+${character.abilityModifiers["Intelligence"]})" }
 				p { +"Wisdom: ${character.abilityScores["Wisdom"]} (+${character.abilityModifiers["Wisdom"]})" }
 				p { +"Charisma: ${character.abilityScores["Charisma"]} (+${character.abilityModifiers["Charisma"]})" }
+				p { +"Proficiency Bonus: +${character.proficiencyBonus}" }
+				p { +"Initiative: +${character.initiative}" }
+				p { +"Passive Perception: ${character.passivePerception}" }
 				hr {  }
 				h2 { +"Character Details" }
 				p {

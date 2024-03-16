@@ -21,6 +21,8 @@ data class DndCharacter(
 	val abilityScores: Map<String, Int>,
 	val abilityModifiers: Map<String, Int>,
 	val proficiencyBonus: Int,
+	val initiative: Int,
+	val passivePerception: Int,
 	val characterDetails: DndCharacterDetails,
 	val hitPoints: Int,
 	val hitDice: String,
