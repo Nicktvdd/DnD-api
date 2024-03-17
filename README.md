@@ -4,7 +4,7 @@ This is an API to generate a random character for Dungeons and Dragons 5th editi
 I will expand on it gradually and add more features as I go along. If you'd like to see some features, feel free to suggest them!
 
 ## Usage
-Dependencies: Docker
+Dependencies: Docker. </br>
 in the root directory of the project, run the following command:
 ```bash
 docker-compose up
