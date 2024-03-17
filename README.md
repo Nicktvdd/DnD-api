@@ -4,8 +4,11 @@ This is an API to generate a random character for Dungeons and Dragons 5th editi
 I will expand on it gradually and add more features as I go along. If you'd like to see some features, feel free to suggest them!
 
 ## Usage
-To randomly generate your own characters you will have to clone the repo and run it on your local machine with Intellij.
-In the future I will host it on a server and make it available for everyone if possible.
+Dependencies: Docker
+in the root directory of the project, run the following command:
+```bash
+docker-compose up
+```
 
 ## Examples
 ### HTML (endpoint: /htmlcharacter)
